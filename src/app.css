@@ -1,6 +1,5 @@
 .container {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 30px;
 }
 
 .title {
@@ -15,12 +14,12 @@
 .leftSide {
   background-color: white;
   border-radius: 5px;
-  padding: 20px;
 }
 
 .rightSide {
   background-color: white;
   border-radius: 5px;
+  text-align: center;
 }
 
 .leftSideTitle {
@@ -33,13 +32,13 @@
 }
 
 .calcButtonContainer {
+  background-color: lightgrey;
   padding: 10px;
-  background-color: lightgrey
 }
 
 .calcButton {
   color: white;
-  background-color: blue;
+  background-color: rgb(65, 120, 202);
   width: 100%;
 }
 
@@ -48,7 +47,7 @@
 }
 
 .outcome {
-  background-color: lightgreen;
+  background-color: rgb(185, 223, 185);
   color: green;
   width: 100%;
   text-align: center;
@@ -57,4 +56,5 @@
 
 .denominations {
   text-align: center;
+  height: 100px;
 }

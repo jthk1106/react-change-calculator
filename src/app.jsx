@@ -8,6 +8,7 @@ class App extends Component {
     this.state = {
       due: '',
       received: '',
+      change: 0,
       twenties: 0,
       tens: 0,
       fives: 0,
@@ -36,75 +37,79 @@ class App extends Component {
   }
 
   calculate() {
+    this.setState({
+      change: this.state.received - this.state.due
+    })
 
   }
 
   render() {
-    console.log(`state.due: ${this.state.due}, state.received: ${this.state.received}`)
+    console.log(`this.state.due: ${this.state.due}, this.state.received: ${this.state.received}, this.state.change: ${this.state.change}`)
     return (
-      <div>
-        <h1 className='title'>Change Calculator</h1>
-        <hr className='line' />
-
-        <div className='container'>
-          <div className='row'>
-            <div className='col-sm-4 leftSide'>
-              <div className="panel panel-default">
-                <div className="panel-body">
-                  <h3 className='leftSideTitle row'>Enter Information</h3>
-                  <div className='row'>
-                    <label>How much is due?</label>
-                    <input className='inputs' value={ this.state.due } onChange={ this.dueInput } type="number" placeholder="how much?" />
-                    <label>How much was received?</label>
-                    <input className='inputs' value={ this.state.received } onChange={ this.receivedInput } type="number" placeholder="how much received?"/>
-                  </div>
-                  <div className='calcButtonContainer'>
-                    <button className='calcButton row btn' onClick={ this.calculate }>Calculate</button>
-                  </div>
+      <div className='container'>
+        <div className='row justify-content-around'>
+          <h1 className='title col-sm-12'>Change Calculator</h1>
+          <hr className='line col-sm-12' />
+        </div>
+        <div className='row justify-content-around'>
+          <div className='col-sm-4 leftSide'>
+            <div className="panel panel-default">
+              <div className='panel-heading'>Enter Information</div>
+              <div className="panel-body">
+                <label>How much is due?</label>
+                <input className='inputs' value={ this.state.due } onChange={ this.dueInput } type="number"/>
+                <label>How much was received?</label>
+                <input className='inputs' value={ this.state.received } onChange={ this.receivedInput } type="number"/>
+                <div className='panel-footer'>
+                  <button className='calcButton btn' onClick={ this.calculate }>Calculate</button>
                 </div>
               </div>
             </div>
-            <div className='col-sm-8 rightSide'>
-              <div className='row outcomeContainer'>
-                <span className='outcome'>Success or Danger</span>
-              </div>
+          </div>
+          <div className='col-sm-8 rightSide'>
+            <div className='row outcomeContainer'>
+              <span className='outcome'>Success or Danger</span>
+            </div>
+            <div className='container'>
               <div className='row denominations'>
-                <div className='col-sm-3'>
+                <div className='col-sm-3 align-self-center'>
                   <span>Twenties</span>
                   <br></br>
                   <span>{ this.state.twenties }</span>
                 </div>
-                <div className='col-sm-3'>
+                <div className='col-sm-3 align-self-center'>
                   <span>Tens</span>
                   <br></br>
                   <span>{ this.state.tens }</span>
                 </div>
-                <div className='col-sm-3'>
+                <div className='col-sm-3 align-self-center'>
                   <span>Fives</span>
                   <br></br>
                   <span>{ this.state.fives }</span>
                 </div>
-                <div className='col-sm-3'>
+                <div className='col-sm-3 align-self-center'>
                   <span>Ones</span>
                   <br></br>
                   <span>{ this.state.ones }</span>
                 </div>
-                <div className='col-sm-3'>
+              </div>
+              <div className='row denominations'>
+                <div className='col-sm-3 align-self-center'>
                   <span>Quarters</span>
                   <br></br>
                   <span>{ this.state.quarters }</span>
                 </div>
-                <div className='col-sm-3'>
+                <div className='col-sm-3 align-self-center'>
                   <span>Dimes</span>
                   <br></br>
                   <span>{ this.state.dimes }</span>
                 </div>
-                <div className='col-sm-3'>
+                <div className='col-sm-3 align-self-center'>
                   <span>Nickels</span>
                   <br></br>
                   <span>{ this.state.nickels }</span>
                 </div>
-                <div className='col-sm-3'>
+                <div className='col-sm-3 align-self-center'>
                   <span>Pennies</span>
                   <br></br>
                   <span>{ this.state.pennies }</span>
