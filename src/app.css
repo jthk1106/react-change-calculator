@@ -16,23 +16,18 @@
   border-radius: 5px;
 }
 
+.panel-heading .panel-footer {
+  background-color: lightgrey;
+}
+
 .rightSide {
   background-color: white;
   border-radius: 5px;
   text-align: center;
 }
 
-.leftSideTitle {
-  background-color: lightgrey;
-}
-
 .inputs {
   width: 100%;
-  padding: 10px;
-}
-
-.calcButtonContainer {
-  background-color: lightgrey;
   padding: 10px;
 }
 
