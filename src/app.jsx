@@ -39,7 +39,7 @@ class App extends Component {
   calculate() {
 
     // TOTAL CHANGE
-    const changeDue = (this.state.received - this.state.due)
+    const changeDue = Number((this.state.received - this.state.due).toFixed(2))
     this.setState({
       change: changeDue
     })
@@ -178,51 +178,52 @@ class App extends Component {
           </div>
           <div className='col-sm-8 rightSide'>
             <div className='row outcomeContainer'>
-              <span className='outcome'>Success or Danger</span>
+              {/* <span className='outcome'>The total change due is ${this.state.change}</span> */}
+              <span className={Math.sign(this.state.change) === 1 ? 'outcome alert alert-success' : 'outcome alert alert-danger'} role='alert'>The total change due is ${this.state.change}</span>
             </div>
             <div className='container'>
               <div className='row denominations'>
-                <div className='col-sm-3 align-self-center'>
+                <div className='col-sm-3 align-self-center a-box'>
                   <span>Twenties</span>
                   <br></br>
-                  <span>{ this.state.twenties }</span>
+                  <span className='change'>{ this.state.twenties }</span>
                 </div>
-                <div className='col-sm-3 align-self-center'>
+                <div className='col-sm-3 align-self-center a-box'>
                   <span>Tens</span>
                   <br></br>
-                  <span>{ this.state.tens }</span>
+                  <span className='change'>{ this.state.tens }</span>
                 </div>
-                <div className='col-sm-3 align-self-center'>
+                <div className='col-sm-3 align-self-center a-box'>
                   <span>Fives</span>
                   <br></br>
-                  <span>{ this.state.fives }</span>
+                  <span className='change'>{ this.state.fives }</span>
                 </div>
-                <div className='col-sm-3 align-self-center'>
+                <div className='col-sm-3 align-self-center a-box'>
                   <span>Ones</span>
                   <br></br>
-                  <span>{ this.state.ones }</span>
+                  <span className='change'>{ this.state.ones }</span>
                 </div>
               </div>
               <div className='row denominations'>
-                <div className='col-sm-3 align-self-center'>
+                <div className='col-sm-3 align-self-center a-box'>
                   <span>Quarters</span>
                   <br></br>
-                  <span>{ this.state.quarters }</span>
+                  <span className='change'>{ this.state.quarters }</span>
                 </div>
-                <div className='col-sm-3 align-self-center'>
+                <div className='col-sm-3 align-self-center a-box'>
                   <span>Dimes</span>
                   <br></br>
-                  <span>{ this.state.dimes }</span>
+                  <span className='change'>{ this.state.dimes }</span>
                 </div>
-                <div className='col-sm-3 align-self-center'>
+                <div className='col-sm-3 align-self-center a-box'>
                   <span>Nickels</span>
                   <br></br>
-                  <span>{ this.state.nickels }</span>
+                  <span className='change'>{ this.state.nickels }</span>
                 </div>
-                <div className='col-sm-3 align-self-center'>
+                <div className='col-sm-3 align-self-center a-box'>
                   <span>Pennies</span>
                   <br></br>
-                  <span>{ this.state.pennies }</span>
+                  <span className='change'>{ this.state.pennies }</span>
                 </div>
               </div>
             </div>

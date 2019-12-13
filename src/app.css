@@ -1,5 +1,5 @@
 .container {
-  margin: 30px;
+
 }
 
 .title {
@@ -14,10 +14,12 @@
 .leftSide {
   background-color: white;
   border-radius: 5px;
+  padding: 0;
 }
 
-.panel-heading .panel-footer {
+.panel-heading, .panel-footer {
   background-color: lightgrey;
+  text-align: center;
 }
 
 .rightSide {
@@ -34,7 +36,7 @@
 .calcButton {
   color: white;
   background-color: rgb(65, 120, 202);
-  width: 100%;
+  width: 75%;
 }
 
 .outcomeContainer {
@@ -42,8 +44,6 @@
 }
 
 .outcome {
-  background-color: rgb(185, 223, 185);
-  color: green;
   width: 100%;
   text-align: center;
   padding: 20px;
@@ -52,4 +52,8 @@
 .denominations {
   text-align: center;
   height: 100px;
+}
+
+.a-box {
+  background-color: lightgrey;
 }
