@@ -167,9 +167,9 @@ class App extends Component {
               <div className='panel-heading'>Enter Information</div>
               <div className="panel-body">
                 <label>How much is due?</label>
-                <input className='inputs' value={ this.state.due } onChange={ this.dueInput } type="number"/>
+                <input className='inputs' value={ this.state.due } onChange={ this.dueInput } type="number" name="amountDue"/>
                 <label>How much was received?</label>
-                <input className='inputs' value={ this.state.received } onChange={ this.receivedInput } type="number"/>
+                <input className='inputs' value={ this.state.received } onChange={ this.receivedInput } type="number" name="amountReceived"/>
                 <div className='panel-footer'>
                   <button className='calcButton btn' onClick={ this.calculate }>Calculate</button>
                 </div>
@@ -179,7 +179,7 @@ class App extends Component {
           <div className='col-sm-8 rightSide'>
             <div className='row outcomeContainer'>
               {/* <span className='outcome'>The total change due is ${this.state.change}</span> */}
-              <span className={Math.sign(this.state.change) === 1 ? 'outcome alert alert-success' : 'outcome alert alert-danger'} role='alert'>The total change due is ${this.state.change}</span>
+              <div className={Math.sign(this.state.change) === 1 ? 'outcome alert alert-success' : 'outcome alert alert-danger'} role='alert'>The total change due is ${this.state.change}</div>
             </div>
             <div className='container'>
               <div className='row denominations'>
